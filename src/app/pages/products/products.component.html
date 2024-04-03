@@ -1,0 +1,25 @@
+<h1 class="text-3xl font-bold mb-4">Estos son los productos</h1>
+<div class="overflow-x-auto">
+  <table class="table-auto min-w-full border-collapse">
+    <thead class="bg-gray-200">
+      <tr>
+        <th class="px-4 py-2 text-left">#</th>
+        <th class="px-4 py-2 text-left">Producto</th>
+        <th class="px-4 py-2 text-left">Precio</th>
+        <th class="px-4 py-2 text-left">Descripción</th>
+        <th class="px-4 py-2 text-left">Detalle</th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-gray-200">
+      @for (product of productList; track $index) {
+        <tr>
+          <td class="px-4 py-2">{{product.id}}</td>
+          <td class="px-4 py-2">{{product.title}}</td>
+          <td class="px-4 py-2">{{ product.price | currency }}</td>
+          <td class="px-4 py-2">{{product.description}}</td>
+          <td class="px-4 py-2"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="navigate(product.id)">Detalles</button></td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
